@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6448192626753205834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7247576748710394067}
+  - component: {fileID: 7541853520661968936}
+  m_Layer: 0
+  m_Name: Bus 2 Data
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7247576748710394067
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448192626753205834}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7541853520661968936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448192626753205834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83200cb4e7e42ea469534ccd79d2fa0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busData:
+  - prefab: {fileID: 8777244388936369068, guid: af975baa242c2b043ad5a3acee8101b5, type: 3}
+    type: 10
+  - prefab: {fileID: 7797157692678080878, guid: 7cb8511f99d9b4343bf970b3ad0060dd, type: 3}
+    type: 11
+  - prefab: {fileID: 2415187554205732027, guid: f52e01a071ee61249a9a5bc7bec2cfda, type: 3}
+    type: 12
+  - prefab: {fileID: 6263643109421776163, guid: d1d5d6774de0b224e98fbf798169de0b, type: 3}
+    type: 13
+  - prefab: {fileID: 806657373005702810, guid: edb253ce41af84e42ab156a99f6e6f85, type: 3}
+    type: 14
+  - prefab: {fileID: 2059037792388000422, guid: 9dd3c2bb87a52b04786fd2e935e7147b, type: 3}
+    type: 15
+  - prefab: {fileID: 3213404631145030740, guid: bacca31ee879be44a9ed78edef3019ed, type: 3}
+    type: 16

@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedfb0b7675c1df4bb204736f7a0eceb, type: 3}
+  m_Name: Tile Data W2
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 4150842682482275077, guid: 74156d33d7958c94989122556976ff9e, type: 3}
+  capPrefab: {fileID: 4150842682482275077, guid: 89cca62aec97ac941825b7b510c407c1, type: 3}
+  borderPrefab: {fileID: 1326808061552700711, guid: fb83ccec90ba5d849991d946785df3e5, type: 3}
+  innerCornerPrefab: {fileID: 3803260535722843816, guid: 329fadb91cdd1e8468935edbba3ceba8, type: 3}
+  outerCornerPrefab: {fileID: 8119848913884902046, guid: 3fb326f5a32eb9041ad584f5cf99cc66, type: 3}
+  paintedSprite: {fileID: 0}
+  rules:
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: 1
+        z: 1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: -1
+        y: 1
+        z: 1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: 1
+        z: -1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: -1
+        y: 1
+        z: -1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: -1
+        z: -1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 1
+        y: 1
+        z: 1
+      c1:
+        x: -1
+        y: -1
+        z: 1
+      c2:
+        x: 1
+        y: 1
+        z: 1
+    sprite: {fileID: 0}
+  - pattern:
+      c0:
+        x: 1
+        y: 1
+        z: 1
+      c1:
+        x: -1
+        y: -1
+        z: 1
+      c2:
+        x: 1
+        y: 1
+        z: 1
+    sprite: {fileID: 0}

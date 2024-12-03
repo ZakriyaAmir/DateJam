@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f28faf74e3de2b4bb5f8724582e5ceb, type: 3}
+  m_Name: IAP Settings
+  m_EditorClassIdentifier: 
+  storeItems:
+  - androidID: com.test.test.noads
+    iOSID: com.test.test.noads
+    productKeyType: 0
+    productType: 1
+  - androidID: com.test.test.starter
+    iOSID: com.test.test.starter
+    productKeyType: 1
+    productType: 1
+  - androidID: com.test.test.powerups
+    iOSID: com.test.test.powerups
+    productKeyType: 2
+    productType: 0
+  - androidID: com.test.test.money.small
+    iOSID: com.test.test.money.small
+    productKeyType: 3
+    productType: 0
+  - androidID: com.test.test.money.medium
+    iOSID: com.test.test.money.medium
+    productKeyType: 4
+    productType: 0
+  - androidID: com.test.test.money.big
+    iOSID: com.test.test.money.big
+    productKeyType: 5
+    productType: 0

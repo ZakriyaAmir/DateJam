@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7849743226bbdfc4b94365052ad63b65, type: 3}
+  m_Name: Skins Database
+  m_EditorClassIdentifier: 
+  tabs:
+  - uniqueId: 10.10.2023 12:59:35_324637
+    name: World
+    isActive: 1
+    type: 0
+    previewType: 0
+    previewPrefab: {fileID: 0}
+    backgroundImage: {fileID: 21300000, guid: bcb3485bc794e8040b3f9475cb8f8c7d, type: 3}
+    backgroundColor: {r: 1, g: 1, b: 1, a: 0.9607843}
+    panelColor: {r: 0.4, g: 0.8980392, b: 0.58431375, a: 1}
+    tabActiveColor: {r: 0.40000004, g: 0.8980393, b: 0.58431375, a: 1}
+    tabDisabledColor: {r: 0.3372549, g: 0.6627451, b: 0.9019608, a: 1}
+    productBackgroundColor: {r: 0.24172305, g: 0.5283019, b: 0.35062298, a: 1}
+  - uniqueId: 10.10.2023 12:59:35_324637
+    name: Bus
+    isActive: 1
+    type: 1
+    previewType: 0
+    previewPrefab: {fileID: 0}
+    backgroundImage: {fileID: 21300000, guid: 726a45d9a623cab449ee7e54527eb604, type: 3}
+    backgroundColor: {r: 1, g: 1, b: 1, a: 0.972549}
+    panelColor: {r: 0.30588236, g: 0.77254903, b: 0.972549, a: 1}
+    tabActiveColor: {r: 0.30709326, g: 0.77439356, b: 0.9716981, a: 1}
+    tabDisabledColor: {r: 0.38082945, g: 0.7264151, b: 0.5081505, a: 1}
+    productBackgroundColor: {r: 0.24256852, g: 0.5944686, b: 0.745283, a: 1}
+  products:
+  - uniqueId: 10.10.2023 13:00:00_518709
+    isExpanded: 0
+    id: 0
+    tabId: 0
+    isDummy: 0
+    name: World 1
+    openedSprite: {fileID: 21300000, guid: 9dc855487e3518647b017180aafbc08a, type: 3}
+    lockedSprite: {fileID: 21300000, guid: 9dc855487e3518647b017180aafbc08a, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: 9dc855487e3518647b017180aafbc08a, type: 3}
+    prefab: {fileID: 3147117125193525667, guid: 2190728cecee97b4fbc0c933f5e45f3d, type: 3}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 100
+  - uniqueId: 10.10.2023 13:09:04_39772
+    isExpanded: 0
+    id: 1
+    tabId: 0
+    isDummy: 0
+    name: World 2
+    openedSprite: {fileID: 21300000, guid: 3decd955aa4f63844901ef3b15ae32b4, type: 3}
+    lockedSprite: {fileID: 21300000, guid: 3decd955aa4f63844901ef3b15ae32b4, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: 3decd955aa4f63844901ef3b15ae32b4, type: 3}
+    prefab: {fileID: 3147117125193525667, guid: 4c541b1f966de2f49aed25c7cd522689, type: 3}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 1000
+  - uniqueId: 10.10.2023 13:01:45_564622
+    isExpanded: 0
+    id: 2
+    tabId: 0
+    isDummy: 1
+    name: Dummy
+    openedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    lockedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    prefab: {fileID: 0}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 0
+  - uniqueId: 10.10.2023 13:00:50_564231
+    isExpanded: 0
+    id: 3
+    tabId: 0
+    isDummy: 1
+    name: Dummy
+    openedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    lockedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    prefab: {fileID: 0}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 0
+  - uniqueId: 2/8/2024 3:04:08 PM_891103
+    isExpanded: 0
+    id: 0
+    tabId: 1
+    isDummy: 0
+    name: Bus 1
+    openedSprite: {fileID: 21300000, guid: 2145547afe2f4f64eac0ef094f3dbebd, type: 3}
+    lockedSprite: {fileID: 21300000, guid: 2145547afe2f4f64eac0ef094f3dbebd, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: 2145547afe2f4f64eac0ef094f3dbebd, type: 3}
+    prefab: {fileID: 6448192626753205834, guid: 5e407feef4863724593f76c833a5e80a, type: 3}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 0
+  - uniqueId: 2/8/2024 3:06:15 PM_364395
+    isExpanded: 0
+    id: 1
+    tabId: 1
+    isDummy: 0
+    name: Bus 2
+    openedSprite: {fileID: 21300000, guid: 1dc5b5829d89dcf40a068788f54b1546, type: 3}
+    lockedSprite: {fileID: 21300000, guid: 1dc5b5829d89dcf40a068788f54b1546, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: 1dc5b5829d89dcf40a068788f54b1546, type: 3}
+    prefab: {fileID: 6448192626753205834, guid: e4ddefae217785d459509778e92159c9, type: 3}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 1000
+  - uniqueId: 2/8/2024 3:08:32 PM_20212
+    isExpanded: 0
+    id: 2
+    tabId: 1
+    isDummy: 1
+    name: Dummy
+    openedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    lockedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    prefab: {fileID: 0}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 0
+  - uniqueId: 2/8/2024 3:09:02 PM_613652
+    isExpanded: 0
+    id: 3
+    tabId: 1
+    isDummy: 1
+    name: Dummy
+    openedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    lockedSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    preview2DSprite: {fileID: 21300000, guid: d088c4549ad829e46ab72337d1794a0b, type: 3}
+    prefab: {fileID: 0}
+    previewPrefab: {fileID: 0}
+    purchaseType: 0
+    currency: 0
+    cost: 0
+  coinsForAdsAmount: 100
+  currencyForAds: 0
+  TabTypes: 0000000001000000

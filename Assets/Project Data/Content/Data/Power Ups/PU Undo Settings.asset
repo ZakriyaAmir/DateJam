@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1554c988edbac41438f3903e05f5a021, type: 3}
+  m_Name: PU Undo Settings
+  m_EditorClassIdentifier: 
+  type: 0
+  icon: {fileID: 21300000, guid: a323e3679e7ff1145b4828972d86518d, type: 3}
+  behaviorPrefab: {fileID: 1263534553345675991, guid: ce69ece84a382034caa6bb0c26aaea5f, type: 3}
+  defaultAmount: 3
+  description: Undo the last move
+  requiredLevel: 0
+  visualiseActiveState: 0
+  backgroundColor: {r: 0.95470434, g: 0.6084906, b: 1, a: 1}
+  currencyType: 0
+  price: 100
+  purchaseAmount: 3
+  floatingMessage: UNDO!

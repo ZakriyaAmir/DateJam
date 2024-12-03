@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c018d8e81ea3d4fab8628d1e58d13a, type: 3}
+  m_Name: Setup Guide Info
+  m_EditorClassIdentifier: 
+  gameName: Bus Stop Jam
+  documentationURL: https://www.notion.so/wmelongames/Bus-Stop-Jam-4365bbbfe913440e9bbe55fbbe69cf2c
+  windowButtons: []
+  folderButtons: []
+  fileButtons:
+  - title: Define Manager
+    textureName: icon_modules
+    filePath: Assets\Project Data\Content\Settings\Editor\Define Settings.asset
+  - title: Skins Database
+    textureName: icon_settings
+    filePath: Assets/Project Data/Content/Data/Skins Database.asset
+  - title: Lives Data
+    textureName: icon_settings
+    filePath: Assets/Project Data/Content/Data/Lives Data.asset

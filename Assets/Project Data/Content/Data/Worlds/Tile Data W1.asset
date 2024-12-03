@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedfb0b7675c1df4bb204736f7a0eceb, type: 3}
+  m_Name: Tile Data W1
+  m_EditorClassIdentifier: 
+  cellPrefab: {fileID: 4150842682482275077, guid: 9b4f93c00b00780499a3012848eb653c, type: 3}
+  borderPrefab: {fileID: 1326808061552700711, guid: 82f88bf32c19a274da2cf3bc36453853, type: 3}
+  innerCornerPrefab: {fileID: 3803260535722843816, guid: 07c89de3acc67be4f87c38ac2a99baba, type: 3}
+  outerCornerPrefab: {fileID: 8119848913884902046, guid: c0da6d484f32d8d4a8695ea613db9ccc, type: 3}
+  rules:
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: 1
+        z: 1
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: -1
+        y: 1
+        z: 1
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: 1
+        z: -1
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: -1
+        y: 1
+        z: -1
+  - pattern:
+      c0:
+        x: 0
+        y: 0
+        z: 0
+      c1:
+        x: 0
+        y: -1
+        z: 0
+      c2:
+        x: 1
+        y: -1
+        z: -1
+  - pattern:
+      c0:
+        x: 1
+        y: 1
+        z: 1
+      c1:
+        x: -1
+        y: -1
+        z: 1
+      c2:
+        x: 1
+        y: 1
+        z: 1
+  - pattern:
+      c0:
+        x: 1
+        y: 1
+        z: 1
+      c1:
+        x: -1
+        y: -1
+        z: 1
+      c2:
+        x: 1
+        y: 1
+        z: 1

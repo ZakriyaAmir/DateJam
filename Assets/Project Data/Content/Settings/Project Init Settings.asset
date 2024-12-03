@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4401664973471492520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f27d59b0f7fd64bbdece140f4e0eae, type: 3}
+  m_Name: Watermelon.FloatingMessageInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Floating Message
+  canvas: {fileID: 8061296051001136106, guid: 70c84c05a93579246ac20f112340805d, type: 3}
+--- !u!114 &-3707581287399739118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b590aedda841e458e71b9f714bbe47, type: 3}
+  m_Name: Watermelon.PrefsInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Prefs Settings
+  prefsSettings: {fileID: 11400000, guid: 7d7a9bd91a6c8b94592743e69bf7b01f, type: 2}
+--- !u!114 &-1404738447185934721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6502da7177729af4fbe4808c93025ab3, type: 3}
+  m_Name: Watermelon.TweenInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Tween
+  easingSettings: {fileID: 11400000, guid: e6dbe08a17ba26a40af1ae67d8fc14c9, type: 2}
+  tweensUpdateCount: 300
+  tweensFixedUpdateCount: 30
+  tweensLateUpdateCount: 0
+  verboseLogging: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a0258cb7d17964493174ceaf8d2867, type: 3}
+  m_Name: Project Init Settings
+  m_EditorClassIdentifier: 
+  coreModules:
+  - {fileID: 3385234563707208356}
+  - {fileID: -1404738447185934721}
+  - {fileID: -3707581287399739118}
+  - {fileID: -4401664973471492520}
+  modules:
+  - {fileID: 636860153974001961}
+  - {fileID: 2675950043578897128}
+  - {fileID: 2244391927298088815}
+--- !u!114 &636860153974001961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27433fc73d0e094491cb89c195d0cf8, type: 3}
+  m_Name: Watermelon.AudioControllerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Audio Controller
+  audioSettings: {fileID: 11400000, guid: 503b1ff9b67b4c644b15ce25918d2d63, type: 2}
+  playRandomMusic: 1
+--- !u!114 &2244391927298088815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8e4e34b37285094ea49b9c1301c78e6, type: 3}
+  m_Name: Watermelon.IAPManagerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: IAP Manager
+  settings: {fileID: 11400000, guid: f9e742c6644852f4397ba85c9f7efefe, type: 2}
+  canvas: {fileID: 4428939727153499309, guid: 9ccb3bd803809cc449b332921a7edf6f, type: 3}
+--- !u!114 &2675950043578897128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f517638b73f01c34780e6f4e044107a3, type: 3}
+  m_Name: Watermelon.AdsManagerInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Ads Manager
+  Settings: {fileID: 11400000, guid: f0858c0f24b3ff5489e1fefb94c661e5, type: 2}
+  DummyCanvasPrefab: {fileID: 985655532585203946, guid: a7af08efc5cd16c4db955b7f65f00dfc, type: 3}
+  GDPRPrefab: {fileID: 2665059414450368139, guid: 25b05165b3e164d41a5e0f7d29a77b0a, type: 3}
+  LoadAdOnStart: 1
+--- !u!114 &3385234563707208356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d448ec3af5e46f04aa350a8a9ccbb3ef, type: 3}
+  m_Name: Watermelon.GameLoadingInitModule
+  m_EditorClassIdentifier: 
+  moduleName: Game Loading Settings
+  manualControlMode: 0
+  loadingCanvasObject: {fileID: 3395919838312422690, guid: 74d643b634085684e8429f7b41c490fe, type: 3}

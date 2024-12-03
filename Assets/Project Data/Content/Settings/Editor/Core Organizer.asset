@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2edfaf6db3b0474b8d7bec745b54b1f, type: 3}
+  m_Name: Core Organizer
+  m_EditorClassIdentifier: 
+  coreSettings:
+  - name: Creatives
+    directory: 
+    directories:
+    - Creatives
+    isDirectoryExist: 00
+    status: Removed
+    include: 0
+  - name: Tools/Clean Up Tool
+    directory: 
+    directories:
+    - Development Tools/Clean Up Tool
+    - Project Data/Content/Settings/Editor/HiddenFilesDatabase.asset
+    isDirectoryExist: 0000
+    status: Removed
+    include: 0
+  - name: Tools/Methods Executor
+    directory: 
+    directories:
+    - Development Tools/Methods Executor
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Tools/Smart Screenshot Taker
+    directory: 
+    directories:
+    - Development Tools/Smart Screenshot Taker
+    isDirectoryExist: 00
+    status: Removed
+    include: 0
+  - name: Level Editors
+    directory: 
+    directories:
+    - Level Editors
+    isDirectoryExist: 00
+    status: Removed
+    include: 0
+  - name: Extra Modules/Camera Controller
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Cinemachine Camera Controller
+    isDirectoryExist: 00
+    status: Removed
+    include: 0
+  - name: Extra Modules/Floating Text
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Floating Text
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Mpdules/IAP Module
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/IAP Module
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/IAP Store
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/IAP Store
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Control System
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Control System
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Level Map
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Level Map
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Lives System
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Lives System
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Particle System
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Particle System
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Power Ups System
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Power Ups System
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Settings Panel
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Settings Panel
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Skin Store
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Skin Store
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
+  - name: Extra Modules/Upgrades
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Upgrades
+    isDirectoryExist: 00
+    status: Removed
+    include: 0
+  - name: Extra Modules/Vibration
+    directory: 
+    directories:
+    - Project Data/Watermelon Core/Extra Components/Vibration
+    isDirectoryExist: 01
+    status: Exists
+    include: 1
