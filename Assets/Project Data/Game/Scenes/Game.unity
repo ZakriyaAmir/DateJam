@@ -991,11 +991,14 @@ MonoBehaviour:
   columns: 3
   tileSpacing: {x: 1, y: 0, z: 1}
   tilePrefab: {fileID: 6969490948398958059, guid: e27e11abf0bf2524c918f3bf8039583e, type: 3}
-  characterPrefabs:
-  - {fileID: 4711471069754275508, guid: 8602cb80179fbf249b33e4bf5af67359, type: 3}
-  - {fileID: 2190986632917589204, guid: b157c78dd00adec4a8022232ed20c6ed, type: 3}
-  - {fileID: 2823562268702917247, guid: 19a4f4e5a45e80d43a9bbb7584af805e, type: 3}
+  characterPrefabs: []
+  allCharacterPrefabs:
   - {fileID: 689842861022868380, guid: 01da8ef97a016de4abe7e451cd2de7a1, type: 3}
+  - {fileID: 2190986632917589204, guid: b157c78dd00adec4a8022232ed20c6ed, type: 3}
+  - {fileID: 4711471069754275508, guid: 8602cb80179fbf249b33e4bf5af67359, type: 3}
+  - {fileID: 689842861022868380, guid: 439c64fe9da30e249a4e5aa5477da917, type: 3}
+  - {fileID: 2823562268702917247, guid: 19a4f4e5a45e80d43a9bbb7584af805e, type: 3}
+  - {fileID: 689842861022868380, guid: 11e3c9d80fefa3844bed36a588a8eb16, type: 3}
   - {fileID: 689842861022868380, guid: 572d76438613ea748b4d60d243aaa00d, type: 3}
   tileParent: {fileID: 1807708380}
   removeKey: 32
@@ -1003,6 +1006,7 @@ MonoBehaviour:
   isBusy: 0
   lowermostCharacters: []
   _levelController: {fileID: 1060784204}
+  allMaleCharacters: []
 --- !u!1001 &976422978240330272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1085,7 +1089,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4220367465153731948, guid: 6ab7b2ae81cc462429d971366cb819ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: 0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 5029019629099302171, guid: 6ab7b2ae81cc462429d971366cb819ef, type: 3}
       propertyPath: m_Name

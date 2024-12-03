@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using Watermelon.BusStop;
 
 namespace Watermelon
 {
@@ -102,7 +103,7 @@ namespace Watermelon
         /// <summary>
         /// List of pooled objects for single pull.
         /// </summary>
-        protected List<GameObject> pooledObjects = new List<GameObject>();
+        public List<GameObject> pooledObjects = new List<GameObject>();
         /// <summary>
         /// List of pooled objects for multiple pull.
         /// </summary>
@@ -489,7 +490,6 @@ namespace Watermelon
 
             newObject.name += nameAddition + PoolManager.SpawnedObjectsAmount;
             newObject.SetActive(false);
-
             pooledObjects.Add(newObject);
             InitGenericSingleObject(newObject);
 

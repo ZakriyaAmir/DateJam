@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI.Table;
 
 namespace Watermelon.BusStop
@@ -12,7 +14,8 @@ namespace Watermelon.BusStop
         [SerializeField] private int columns = 3; // Number of columns
         [SerializeField] private Vector3 tileSpacing = new Vector3(2f, 0, 2f); // Spacing between tiles
         [SerializeField] private GameObject tilePrefab; // Prefab for the 3D tile
-        [SerializeField] private GameObject[] characterPrefabs; // Array of character prefabs to spawn
+        [SerializeField] private List<GameObject> characterPrefabs; // Array of character prefabs to spawn
+        [SerializeField] private List<GameObject> allCharacterPrefabs; // Array of character prefabs to spawn
         [SerializeField] private Transform tileParent; // Parent object for tiles
         [SerializeField] private KeyCode removeKey = KeyCode.Space; // Key to remove a random character
         [SerializeField] private float moveSpeed = 2f; // Speed for lerping characters
@@ -24,11 +27,68 @@ namespace Watermelon.BusStop
         [SerializeField] public GameObject[] lowermostCharacters; // List of lowermost characters for each column
         [SerializeField] public LevelController _levelController; // List of lowermost characters for each column
 
+        public List<GameObject> allMaleCharacters;
+
         void Start()
         {
+            updateCharacters();
             InitializeTiles();
             InitializeCharacters();
             InitializeLowermostCharacters();
+        }
+
+        void updateCharacters() 
+        {
+            List<GameObject> tempMale = new List<GameObject>();
+            List<MaleBehavior> tempMale2 = new List<MaleBehavior>();
+            tempMale2 = FindObjectsOfType<MaleBehavior>().ToList();
+            foreach (MaleBehavior obj in tempMale2) 
+            {
+                tempMale.Add(obj.gameObject);
+            }
+            allMaleCharacters = tempMale;
+            FilterUniqueCharacters();
+        }
+
+        void FilterUniqueCharacters()
+        {
+            List<GameObject> uniqueGameObjects = GetUniqueGameObjectsByColor(allMaleCharacters);
+            List<GameObject> uniqueGameObjects2 = new List<GameObject>();
+            foreach (GameObject obj in uniqueGameObjects)
+            {
+                foreach (GameObject obj2 in allCharacterPrefabs)
+                {
+                    if (obj.GetComponent<HumanoidCharacterBehavior>().color == obj2.GetComponent<HumanoidCharacterBehavior>().color)
+                    {
+                        uniqueGameObjects2.Add(obj2);
+                    }
+                }
+            }
+
+            characterPrefabs.Clear();
+            characterPrefabs = uniqueGameObjects2;
+        }
+
+        public static List<GameObject> GetUniqueGameObjectsByColor(List<GameObject> gameObjects)
+        {
+            Dictionary<string, GameObject> uniqueObjects = new Dictionary<string, GameObject>();
+
+            foreach (GameObject obj in gameObjects)
+            {
+                if (obj != null)
+                {
+                    // Get the HumanoidCharacterBehavior component
+                    HumanoidCharacterBehavior behavior = obj.GetComponent<HumanoidCharacterBehavior>();
+
+                    // Check if the component exists and use its Color property
+                    if (behavior != null && !uniqueObjects.ContainsKey(behavior.color))
+                    {
+                        uniqueObjects[behavior.color] = obj;
+                    }
+                }
+            }
+
+            return new List<GameObject>(uniqueObjects.Values);
         }
 
         void Update()
@@ -92,9 +152,9 @@ namespace Watermelon.BusStop
 
         void SpawnCharacter(int row, int col)
         {
-            if (characterPrefabs.Length == 0) return;
+            if (characterPrefabs.Count == 0) return;
 
-            GameObject characterPrefab = characterPrefabs[Random.Range(0, characterPrefabs.Length)];
+            GameObject characterPrefab = characterPrefabs[Random.Range(0, characterPrefabs.Count)];
             GameObject character = Instantiate(characterPrefab, tiles[row, col]);
             character.transform.localPosition = Vector3.zero;
             characters[row, col] = character;
@@ -119,6 +179,8 @@ namespace Watermelon.BusStop
                 characters[row, col] = null;
                 StartCoroutine(MoveCharactersDown(col));
             }
+
+            updateCharacters();
         }
 
         IEnumerator MoveCharactersDown(int col)

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 452305484631703800}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,6 +51,9 @@ MonoBehaviour:
   graphicsAnimator: {fileID: 733179056831910519}
   trailParticleSystem: {fileID: 5094081583233241648}
   movementSpeed: 10
+  outlineActiveWidth: 3.5
+  outlineDisableWidth: 1.5
+  color: 
 --- !u!65 &452305484631703800
 BoxCollider:
   m_ObjectHideFlags: 0
