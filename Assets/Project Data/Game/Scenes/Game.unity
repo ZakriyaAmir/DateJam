@@ -757,7 +757,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   database: {fileID: 11400000, guid: 6d550683702c04a42a6a7b9f33db3611, type: 2}
   levelIndex: 0
-  _femaleTileManager: {fileID: 1807708381}
+  _femaleTileManager: {fileID: 0}
+  _femaleTilePrefab: {fileID: 8354208523203450495, guid: 057aad35d0cae05469b7424d5398985a, type: 3}
   tileManager: {fileID: 1060784205}
   levelElementSize: 1
   startZ: 0
@@ -943,70 +944,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1807708379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1807708380}
-  - component: {fileID: 1807708381}
-  m_Layer: 0
-  m_Name: femaleTiles
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1807708380
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807708379}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 0.12, z: 9.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1807708381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1807708379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd864a1b78cd0944b50ab0149d6c462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rows: 5
-  columns: 3
-  tileSpacing: {x: 1, y: 0, z: 1}
-  tilePrefab: {fileID: 6969490948398958059, guid: e27e11abf0bf2524c918f3bf8039583e, type: 3}
-  characterPrefabs: []
-  allCharacterPrefabs:
-  - {fileID: 689842861022868380, guid: 01da8ef97a016de4abe7e451cd2de7a1, type: 3}
-  - {fileID: 2190986632917589204, guid: b157c78dd00adec4a8022232ed20c6ed, type: 3}
-  - {fileID: 4711471069754275508, guid: 8602cb80179fbf249b33e4bf5af67359, type: 3}
-  - {fileID: 689842861022868380, guid: 439c64fe9da30e249a4e5aa5477da917, type: 3}
-  - {fileID: 2823562268702917247, guid: 19a4f4e5a45e80d43a9bbb7584af805e, type: 3}
-  - {fileID: 689842861022868380, guid: 11e3c9d80fefa3844bed36a588a8eb16, type: 3}
-  - {fileID: 689842861022868380, guid: 572d76438613ea748b4d60d243aaa00d, type: 3}
-  tileParent: {fileID: 1807708380}
-  removeKey: 32
-  moveSpeed: 2
-  isBusy: 0
-  lowermostCharacters: []
-  _levelController: {fileID: 1060784204}
-  allMaleCharacters: []
 --- !u!1001 &976422978240330272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1089,7 +1026,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4220367465153731948, guid: 6ab7b2ae81cc462429d971366cb819ef, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00024414062
+      value: 0.000030517578
       objectReference: {fileID: 0}
     - target: {fileID: 5029019629099302171, guid: 6ab7b2ae81cc462429d971366cb819ef, type: 3}
       propertyPath: m_Name
@@ -1923,4 +1860,3 @@ SceneRoots:
   - {fileID: 5178066047858781992}
   - {fileID: 1060784197}
   - {fileID: 1684709557}
-  - {fileID: 1807708380}

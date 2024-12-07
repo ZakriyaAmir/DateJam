@@ -11,6 +11,7 @@ namespace Watermelon.BusStop
         [SerializeField] public LevelDatabase database;
         [SerializeField] public int levelIndex;
         [SerializeField] public FemaleTileManager _femaleTileManager;
+        [SerializeField] public GameObject _femaleTilePrefab;
 
         [Space]
         [SerializeField] TileManager tileManager;
@@ -169,6 +170,18 @@ namespace Watermelon.BusStop
 
             onLoaded?.Invoke();
 
+            InitialzeFemaleTiles();
+        }
+
+        public void InitialzeFemaleTiles() 
+        {
+            Debug.Log("Level Initialized");
+            if (_femaleTileManager != null) 
+            {
+                Destroy(_femaleTileManager.gameObject);
+            }
+
+            _femaleTileManager = Instantiate(_femaleTilePrefab).GetComponent<FemaleTileManager>();
             _femaleTileManager.gameObject.SetActive(true);
         }
 
