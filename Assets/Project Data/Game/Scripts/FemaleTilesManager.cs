@@ -38,27 +38,72 @@ namespace Watermelon.BusStop
             InitializeLowermostCharacters();
         }
 
-        void updateCharacters() 
+        void updateCharacters()
         {
+            //for male characters
             List<GameObject> tempMale = new List<GameObject>();
             List<MaleBehavior> tempMale2 = new List<MaleBehavior>();
             tempMale2 = FindObjectsOfType<MaleBehavior>().ToList();
-            foreach (MaleBehavior obj in tempMale2) 
+            foreach (MaleBehavior obj in tempMale2)
             {
                 tempMale.Add(obj.gameObject);
             }
             AddUniqueGameObjects(tempMale);
-            //allMaleCharacters = tempMale;
-            //FilterUniqueCharacters();
+            //
+
+            //for spawners
+            List<GameObject> tempSpawner = new List<GameObject>();
+            List<SpawnerElementBehavior> tempSpawner2 = new List<SpawnerElementBehavior>();
+            tempSpawner2 = FindObjectsOfType<SpawnerElementBehavior>().ToList();
+            foreach (SpawnerElementBehavior obj in tempSpawner2)
+            {
+                //Skip extracted spawner
+                if (!obj.extracted)
+                {
+                    foreach (LevelElement.Type obj2 in obj.spawnQueue)
+                    {
+                        switch (obj2.ToString())
+                        {
+                            case "Block_Blue":
+                                tempSpawner.Add(allCharacterPrefabs[0]);
+                                break;
+                            case "Block_Green":
+                                tempSpawner.Add(allCharacterPrefabs[1]);
+                                break;
+                            case "Block_Pink":
+                                tempSpawner.Add(allCharacterPrefabs[2]);
+                                break;
+                            case "Block_Purple":
+                                tempSpawner.Add(allCharacterPrefabs[3]);
+                                break;
+                            case "Block_Red":
+                                tempSpawner.Add(allCharacterPrefabs[4]);
+                                break;
+                            case "Block_Teal":
+                                tempSpawner.Add(allCharacterPrefabs[5]);
+                                break;
+                            case "Block_Yellow":
+                                tempSpawner.Add(allCharacterPrefabs[6]);
+                                break;
+                        }
+                    }
+                    obj.extracted = true;
+                    AddUniqueGameObjects(tempSpawner);
+                    foreach (GameObject go in tempSpawner)
+                    {
+                        Debug.Log("zak1 = " + go.name);
+                    }
+                }
+            }
         }
 
-        public void AddUniqueGameObjects(List<GameObject> tempMale)
+        public void AddUniqueGameObjects(List<GameObject> tempList)
         {
             // Use a HashSet to track unique GameObjects in allMaleCharacters
             HashSet<GameObject> uniqueGameObjects = new HashSet<GameObject>(allMaleCharacters);
 
             // Iterate through tempMale and add only unique items
-            foreach (GameObject obj in tempMale)
+            foreach (GameObject obj in tempList)
             {
                 if (!uniqueGameObjects.Contains(obj))
                 {
@@ -77,47 +122,6 @@ namespace Watermelon.BusStop
                 }
             }
         }
-
-        /*void FilterUniqueCharacters()
-        {
-            List<GameObject> uniqueGameObjects = GetUniqueGameObjectsByColor(allMaleCharacters);
-            List<GameObject> uniqueGameObjects2 = new List<GameObject>();
-            foreach (GameObject obj in uniqueGameObjects)
-            {
-                foreach (GameObject obj2 in allCharacterPrefabs)
-                {
-                    if (obj.GetComponent<HumanoidCharacterBehavior>().color == obj2.GetComponent<HumanoidCharacterBehavior>().color)
-                    {
-                        uniqueGameObjects2.Add(obj2);
-                    }
-                }
-            }
-
-            characterPrefabs.Clear();
-            characterPrefabs = uniqueGameObjects2;
-        }
-
-        public static List<GameObject> GetUniqueGameObjectsByColor(List<GameObject> gameObjects)
-        {
-            Dictionary<string, GameObject> uniqueObjects = new Dictionary<string, GameObject>();
-
-            foreach (GameObject obj in gameObjects)
-            {
-                if (obj != null)
-                {
-                    // Get the HumanoidCharacterBehavior component
-                    HumanoidCharacterBehavior behavior = obj.GetComponent<HumanoidCharacterBehavior>();
-
-                    // Check if the component exists and use its Color property
-                    if (behavior != null && !uniqueObjects.ContainsKey(behavior.color))
-                    {
-                        uniqueObjects[behavior.color] = obj;
-                    }
-                }
-            }
-
-            return new List<GameObject>(uniqueObjects.Values);
-        }*/
 
         void Update()
         {
@@ -209,7 +213,7 @@ namespace Watermelon.BusStop
                 StartCoroutine(MoveCharactersDown(col));
             }
 
-            updateCharacters();
+            //updateCharacters();
         }
 
         IEnumerator MoveCharactersDown(int col)

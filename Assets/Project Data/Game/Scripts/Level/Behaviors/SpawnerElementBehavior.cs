@@ -12,9 +12,10 @@ namespace Watermelon.BusStop
 
         [SerializeField] JuicyBounce juicyBounce;
 
-        private List<LevelElement.Type> spawnQueue;
+        public List<LevelElement.Type> spawnQueue;
         private int currentElementIndex;
         private ElementPosition spawnerOffset;
+        public bool extracted;
 
         private TweenCase delayTweenCase;
 

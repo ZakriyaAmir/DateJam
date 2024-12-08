@@ -50,7 +50,8 @@ namespace Watermelon.BusStop
 
         private static LevelTutorial levelTutorial;
 
-        private static List<LevelElementBehavior> levelElements;
+        public static List<LevelElementBehavior> levelElements;
+        [SerializeField] public List<LevelElementBehavior> allCharacters;
         private static List<LevelElementBehavior> highlightedElements;
 
         private static Dictionary<LevelData.SpecialEffectType, ElementSpecialEffect> levelEffectsLink;
@@ -180,8 +181,8 @@ namespace Watermelon.BusStop
             {
                 Destroy(_femaleTileManager.gameObject);
             }
-
             _femaleTileManager = Instantiate(_femaleTilePrefab).GetComponent<FemaleTileManager>();
+            GetComponent<GameController>()._femaleTileManager = _femaleTileManager;
             _femaleTileManager.gameObject.SetActive(true);
         }
 
@@ -426,6 +427,7 @@ namespace Watermelon.BusStop
 
         public void OnMatchCompleted()
         {
+            Debug.Log("zak0 = " + levelElements.Count);
             Vibration.Vibrate(VibrationIntensity.Light);
 
             AudioController.PlaySound(AudioController.Sounds.matchSound);
@@ -443,6 +445,9 @@ namespace Watermelon.BusStop
                     break;
                 }
             }
+
+            allCharacters = levelElements;
+
 
             if (!isActiveObjectExists)
             {
