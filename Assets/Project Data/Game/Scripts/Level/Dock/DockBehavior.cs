@@ -269,15 +269,19 @@ namespace Watermelon.BusStop
                 var male = slot.SlotCase.Behavior.gameObject.GetComponent<MaleBehavior>();
                 if (slot.IsOccupied)
                 {
-                    foreach (GameObject obj in _gameController._femaleTileManager.lowermostCharacters)
+                    for (int index = 0; index < _gameController._femaleTileManager.lowermostCharacters.Length; index++)
                     {
-                        // Skip the iteration if obj is null
+                        GameObject obj = _gameController._femaleTileManager.lowermostCharacters[index];
+
+                        // Skip if the object is null
                         if (obj == null) continue;
 
                         // Match color
-                        if (slot.SlotCase.Behavior.LevelElement.ElementType.ToString() == obj.GetComponent<HumanoidCharacterBehavior>().color && obj != null)
+                        if (slot.SlotCase.Behavior.LevelElement.ElementType.ToString() == obj.GetComponent<HumanoidCharacterBehavior>().color)
                         {
-                            _gameController._femaleTileManager.lowermostCharacters.Remove(obj);
+                            // Remove the GameObject by setting it to null
+                            _gameController._femaleTileManager.lowermostCharacters[index] = null;
+
                             // bus.Collect(slot.SlotCase.Behavior);
                             male.Collect(obj);
 
@@ -288,7 +292,7 @@ namespace Watermelon.BusStop
                                 male.MoveToExit();
                             }
 
-                            // Sus code
+                            // Stop processing if conditions are met
                             if (!male.IsAvailableToEnter || !male.HasAvailableSit) break;
                         }
                     }

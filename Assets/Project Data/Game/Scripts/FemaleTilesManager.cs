@@ -70,7 +70,6 @@ namespace Watermelon.BusStop
                         {
                             if (obj.GetComponent<HumanoidCharacterBehavior>().color == obj2.GetComponent<HumanoidCharacterBehavior>().color)
                             {
-                                Debug.Log("zak1");
                                 femaleObjectsPool.Add(obj2);
                             }
                         }
@@ -184,7 +183,6 @@ namespace Watermelon.BusStop
             if (femaleObjectsPool.Count == 0) return;
             int rand = Random.Range(0, femaleObjectsPool.Count);
             GameObject characterPrefab = femaleObjectsPool[rand];
-            Debug.Log("zak2");
             GameObject character = Instantiate(characterPrefab, tiles[row, col]);
             femaleObjectsPool.RemoveAt(rand);
             character.transform.localPosition = Vector3.zero;
