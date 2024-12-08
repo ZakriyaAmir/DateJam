@@ -271,22 +271,25 @@ namespace Watermelon.BusStop
                 {
                     foreach (GameObject obj in _gameController._femaleTileManager.lowermostCharacters)
                     {
-                        //Match color
-                        if (obj == null) break;
-                        if (slot.SlotCase.Behavior.LevelElement.ElementType.ToString() == obj.GetComponent<HumanoidCharacterBehavior>().color)
+                        // Skip the iteration if obj is null
+                        if (obj == null) continue;
+
+                        // Match color
+                        if (slot.SlotCase.Behavior.LevelElement.ElementType.ToString() == obj.GetComponent<HumanoidCharacterBehavior>().color && obj != null)
                         {
                             _gameController._femaleTileManager.lowermostCharacters.Remove(obj);
-                            //bus.Collect(slot.SlotCase.Behavior);
+                            // bus.Collect(slot.SlotCase.Behavior);
                             male.Collect(obj);
-                            if (male.PassengersCount > 2) 
+
+                            if (male.PassengersCount > 2)
                             {
                                 slot.RemoveSlot();
                                 removed = true;
                                 male.MoveToExit();
                             }
 
-                            //Sus code
-                            if (!male.IsAvailableToEnter || !male.HasAvailableSit) return;
+                            // Sus code
+                            if (!male.IsAvailableToEnter || !male.HasAvailableSit) break;
                         }
                     }
                 }

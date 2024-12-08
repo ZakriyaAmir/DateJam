@@ -28,6 +28,7 @@ namespace Watermelon.BusStop
         [SerializeField] public LevelController _levelController; // List of lowermost characters for each column
 
         public List<GameObject> allMaleCharacters;
+        public List<GameObject> femaleObjectsPool;
 
         void Start()
         {
@@ -46,11 +47,39 @@ namespace Watermelon.BusStop
             {
                 tempMale.Add(obj.gameObject);
             }
-            allMaleCharacters = tempMale;
-            FilterUniqueCharacters();
+            AddUniqueGameObjects(tempMale);
+            //allMaleCharacters = tempMale;
+            //FilterUniqueCharacters();
         }
 
-        void FilterUniqueCharacters()
+        public void AddUniqueGameObjects(List<GameObject> tempMale)
+        {
+            // Use a HashSet to track unique GameObjects in allMaleCharacters
+            HashSet<GameObject> uniqueGameObjects = new HashSet<GameObject>(allMaleCharacters);
+
+            // Iterate through tempMale and add only unique items
+            foreach (GameObject obj in tempMale)
+            {
+                if (!uniqueGameObjects.Contains(obj))
+                {
+                    allMaleCharacters.Add(obj); // Add to the main list
+                    //Create 3 female counterparts of newly detected male characters
+                    for (int i = 0; i < 3; i++) 
+                    {
+                        foreach (GameObject obj2 in allCharacterPrefabs)
+                        {
+                            if (obj.GetComponent<HumanoidCharacterBehavior>().color == obj2.GetComponent<HumanoidCharacterBehavior>().color)
+                            {
+                                Debug.Log("zak1");
+                                femaleObjectsPool.Add(obj2);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /*void FilterUniqueCharacters()
         {
             List<GameObject> uniqueGameObjects = GetUniqueGameObjectsByColor(allMaleCharacters);
             List<GameObject> uniqueGameObjects2 = new List<GameObject>();
@@ -89,7 +118,7 @@ namespace Watermelon.BusStop
             }
 
             return new List<GameObject>(uniqueObjects.Values);
-        }
+        }*/
 
         void Update()
         {
@@ -152,10 +181,12 @@ namespace Watermelon.BusStop
 
         void SpawnCharacter(int row, int col)
         {
-            if (characterPrefabs.Count == 0) return;
-
-            GameObject characterPrefab = characterPrefabs[Random.Range(0, characterPrefabs.Count)];
+            if (femaleObjectsPool.Count == 0) return;
+            int rand = Random.Range(0, femaleObjectsPool.Count);
+            GameObject characterPrefab = femaleObjectsPool[rand];
+            Debug.Log("zak2");
             GameObject character = Instantiate(characterPrefab, tiles[row, col]);
+            femaleObjectsPool.RemoveAt(rand);
             character.transform.localPosition = Vector3.zero;
             characters[row, col] = character;
 
