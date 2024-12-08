@@ -164,8 +164,13 @@ namespace Watermelon
             passengers.Clear();
 
             stateMachine.StopMachine();*/
-
+            
             gameObject.SetActive(false);
+            if (FindFirstObjectByType<MaleBehavior>() == null) 
+            {
+                GameController.WinGame();
+            }
+            Destroy(gameObject);
         }
     }
 }

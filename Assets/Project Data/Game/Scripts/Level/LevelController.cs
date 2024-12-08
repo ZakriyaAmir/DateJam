@@ -51,7 +51,6 @@ namespace Watermelon.BusStop
         private static LevelTutorial levelTutorial;
 
         public static List<LevelElementBehavior> levelElements;
-        [SerializeField] public List<LevelElementBehavior> allCharacters;
         private static List<LevelElementBehavior> highlightedElements;
 
         private static Dictionary<LevelData.SpecialEffectType, ElementSpecialEffect> levelEffectsLink;
@@ -427,7 +426,6 @@ namespace Watermelon.BusStop
 
         public void OnMatchCompleted()
         {
-            Debug.Log("zak0 = " + levelElements.Count);
             Vibration.Vibrate(VibrationIntensity.Light);
 
             AudioController.PlaySound(AudioController.Sounds.matchSound);
@@ -446,13 +444,10 @@ namespace Watermelon.BusStop
                 }
             }
 
-            allCharacters = levelElements;
-
-
-            if (!isActiveObjectExists)
+            /*if (!isActiveObjectExists)
             {
                 GameController.WinGame();
-            }
+            }*/
         }
 
         private void LateUpdate()

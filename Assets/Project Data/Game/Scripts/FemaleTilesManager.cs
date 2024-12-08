@@ -88,7 +88,8 @@ namespace Watermelon.BusStop
                         }
                     }
                     obj.extracted = true;
-                    AddUniqueGameObjects(tempSpawner);
+                    AddUniqueGameObjectsFromSpawner(tempSpawner);
+                    tempSpawner.Clear();
                     foreach (GameObject go in tempSpawner)
                     {
                         Debug.Log("zak1 = " + go.name);
@@ -120,6 +121,32 @@ namespace Watermelon.BusStop
                         }
                     }
                 }
+            }
+        }
+
+        public void AddUniqueGameObjectsFromSpawner(List<GameObject> tempList)
+        {
+            /*// Use a HashSet to track unique GameObjects in allMaleCharacters
+            HashSet<GameObject> uniqueGameObjects = new HashSet<GameObject>(allMaleCharacters);*/
+
+            // Iterate through tempMale and add only unique items
+            foreach (GameObject obj in tempList)
+            {
+                /*if (!uniqueGameObjects.Contains(obj))
+                {*/
+                    allMaleCharacters.Add(obj); // Add to the main list
+                    //Create 3 female counterparts of newly detected male characters
+                    for (int i = 0; i < 3; i++)
+                    {
+                        foreach (GameObject obj2 in allCharacterPrefabs)
+                        {
+                            if (obj.GetComponent<HumanoidCharacterBehavior>().color == obj2.GetComponent<HumanoidCharacterBehavior>().color)
+                            {
+                                femaleObjectsPool.Add(obj2);
+                            }
+                        }
+                    }
+                //}
             }
         }
 
