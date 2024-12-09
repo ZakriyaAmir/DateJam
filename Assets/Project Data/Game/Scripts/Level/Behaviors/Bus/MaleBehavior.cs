@@ -85,7 +85,8 @@ namespace Watermelon
             passengers.Add(passenger);
             var sitIndex = passengers.Count - 1;
             _femaleTileManager.RemoveCharacter(passenger.GetComponent<femaleInfo>().Row, passenger.GetComponent<femaleInfo>().Column);
-            passenger.GetComponent<BaseCharacterBehavior>().MoveTo(new Vector3[] { enterPosition.transform.position }, false, () =>
+            StartCoroutine(MoveToDestination(passenger.transform, enterPosition.transform, sitIndex));
+            /*passenger.GetComponent<BaseCharacterBehavior>().MoveTo(new Vector3[] { enterPosition.transform.position }, false, () =>
             {
                 var sit = seats[sitIndex];
                 passenger.transform.SetParent(sit);
@@ -96,7 +97,33 @@ namespace Watermelon
 
                 if (!HasAvailableSit)
                     IsAvailableToEnter = false;
-            });
+            });*/
+        }
+
+        private IEnumerator MoveToDestination(Transform objectToMove, Transform targetPosition, int sitIndex)
+        {
+            Vector3 startPosition = objectToMove.position;
+            float elapsedTime = 0f;
+            float time = 0.3f;
+
+            while (elapsedTime < time)
+            {
+                objectToMove.LookAt(targetPosition);
+                objectToMove.position = Vector3.Lerp(startPosition, targetPosition.position, elapsedTime / time);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            objectToMove.position = targetPosition.position; // Snap to the target position at the end
+            var sit = seats[sitIndex];
+            objectToMove.transform.SetParent(sit);
+            objectToMove.transform.position = sit.position;
+            objectToMove.transform.localRotation = Quaternion.Euler(0, 90, 0);
+            //objectToMove.GetComponent<BaseCharacterBehavior>().PlaySpawnAnimation();
+            //objectToMove.GetComponent<BaseCharacterBehavior>().OnElementSubmittedToBus();
+
+            if (!HasAvailableSit)
+                IsAvailableToEnter = false;
         }
 
         public void CollectInstant(BaseCharacterBehavior passenger)
@@ -129,13 +156,27 @@ namespace Watermelon
 
             //EnvironmentBehavior.RemoveCollectingBus();
 
-            Move(LevelController.Environment.BusExitPos, 1, Clear);
+            StartCoroutine(Move(LevelController.Environment.BusExitPos, 1, Clear));
         }
 
         private TweenCaseCollection moveCase;
 
-        public void Move(Vector3 position, float duration = 1, SimpleCallback onReached = null)
+        public IEnumerator Move(Vector3 position, float duration = 1, SimpleCallback onReached = null)
         {
+            /* Vector3 startPosition = transform.position;
+             Vector3 targetPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1f);
+             float elapsedTime = 0f;
+             float time = 0.4f;
+
+             while (elapsedTime < time)
+             {
+                 transform.LookAt(position);
+                 transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / time);
+                 elapsedTime += Time.deltaTime;
+                 yield return null;
+             }*/
+
+            yield return new WaitForSeconds(0.15f);
             if (moveCase != null && !moveCase.IsComplete())
                 moveCase.Kill();
 
@@ -148,6 +189,7 @@ namespace Watermelon
                 Tween.DelayedCall(duration - 0.1f, () => animator.SetTrigger("Break"));
 
             Tween.EndTweenCaseCollection();
+            yield return null;
         }
 
         public void Clear()
