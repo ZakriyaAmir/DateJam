@@ -35,7 +35,7 @@ namespace Watermelon
         private TweenCase noThanksAppearTween;
         private int coinsHash = FloatingCloud.StringToHash(CurrencyType.Coins.ToString());
 
-        private readonly string NO_THANKS_TEXT = "NO, THANKS";
+        private readonly string NO_THANKS_TEXT = "CONTINUE";
         private readonly string CONTINUE_TEXT = "CONTINUE";
 
         private int currentReward;

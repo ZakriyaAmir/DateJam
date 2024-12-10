@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 664f8b7700f1494448d703089d250fc8, type: 3}
   m_Name: Lives Data
   m_EditorClassIdentifier: 
-  maxLivesCount: 5
+  maxLivesCount: 2147483647
   oneLifeRestorationDuration: 1200
   fullText: FULL!
   timespanFormat: '{0:mm\:ss}'
