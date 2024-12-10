@@ -275,7 +275,7 @@ MonoBehaviour:
   characterRenderer: {fileID: 7948677909951017770}
   graphicsAnimator: {fileID: 2153728831960657906}
   trailParticleSystem: {fileID: 5872274675317010357}
-  movementSpeed: 10
+  movementSpeed: 20
   outlineActiveWidth: 3.5
   outlineDisableWidth: 1.5
   color: Block_Green

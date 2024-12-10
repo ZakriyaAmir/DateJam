@@ -398,7 +398,7 @@ namespace Watermelon.BusStop
         {
             if (!isStageLoaded)
                 return;
-
+            
             isStageLoaded = false;
 
             for (int i = 0; i < levelElements.Count; i++)

@@ -71,7 +71,7 @@ namespace Watermelon
             if (LivesManager.IsMaxLives)
                 LivesManager.RemoveLife();
 
-            GameController.ReplayLevel();
+            FindObjectOfType<GameController>().ReplayLevel();
         }
 
         #endregion

@@ -21,8 +21,8 @@ namespace Watermelon.BusStop
 
         private BaseCharacterBehavior lastPickedObject;
 
-        public bool IsFilled => slots[^1].IsOccupied;
-        public bool IsEmpty => !slots[0].IsOccupied;
+        [SerializeField] public bool IsFilled => slots[^1].IsOccupied;
+        [SerializeField] public bool IsEmpty => !slots[0].IsOccupied;
 
         private TweenCase delayTweenCase;
 
@@ -31,10 +31,13 @@ namespace Watermelon.BusStop
 
         public GameController _gameController;
 
+        public int matchFailCount;
+        public bool gameOver;
+
         public void Initialise(LevelController levelController)
         {
             instance = this;
-
+            matchFailCount = 0;
             this.levelController = levelController;
 
             defaultContainerPosition = transform.position;
@@ -55,6 +58,9 @@ namespace Watermelon.BusStop
 
         public void DisposeQuickly()
         {
+            gameOver = false;
+            matchFailCount = 0;
+
             delayTweenCase.KillActive();
 
             lastPickedObject = null;
@@ -269,6 +275,20 @@ namespace Watermelon.BusStop
                 var male = slot.SlotCase.Behavior.gameObject.GetComponent<MaleBehavior>();
                 if (slot.IsOccupied)
                 {
+                    if (IsFilled)
+                    {
+                        matchFailCount++;
+                        if (matchFailCount > 1000)
+                        {
+                            gameOver = true;
+                            levelController.OnSlotsFilled();
+                        }
+                    }
+                    else 
+                    {
+                        matchFailCount = 0;
+                    }
+
                     for (int index = 0; index < _gameController._femaleTileManager.lowermostCharacters.Length; index++)
                     {
                         GameObject obj = _gameController._femaleTileManager.lowermostCharacters[index];
@@ -279,6 +299,8 @@ namespace Watermelon.BusStop
                         // Match color
                         if (slot.SlotCase.Behavior.LevelElement.ElementType.ToString() == obj.GetComponent<HumanoidCharacterBehavior>().color)
                         {
+                            //Reset count on match
+                            matchFailCount = 0;
                             // Remove the GameObject by setting it to null
                             _gameController._femaleTileManager.lowermostCharacters[index] = null;
 
@@ -387,10 +409,10 @@ namespace Watermelon.BusStop
                 }
 
             }
-            else if (IsFilled && !GameController.Data.ActivateVehicles)
+            /*else if (IsFilled && matchFailCount > 8)
             {
                 levelController.OnSlotsFilled();
-            }
+            }*/
 
             return true;
         }
@@ -494,16 +516,19 @@ namespace Watermelon.BusStop
         {
             /*if (Time.frameCount % 15 == 0 && !IsEmpty)
             {*/
-                /*if (!GameController.Data.ActivateVehicles)
+            /*if (!GameController.Data.ActivateVehicles)
+            {
+                if (!CheckMatch() && IsFilled)
                 {
-                    if (!CheckMatch() && IsFilled)
-                    {
-                        levelController.OnSlotsFilled();
-                    }
+                    levelController.OnSlotsFilled();
                 }
-                else
-                {*/
-                    CheckBusMatch();
+            }
+            else
+            {*/
+            if (!gameOver)
+            {
+                CheckBusMatch();
+            }
                     /*if (IsFilled && !EnvironmentBehavior.IsCollectingPlaceAvailable)
                     {
                         levelController.OnSlotsFilled();

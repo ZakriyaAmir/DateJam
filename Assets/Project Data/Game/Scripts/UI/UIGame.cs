@@ -79,7 +79,7 @@ namespace Watermelon
 
             UIController.HidePage<UIGame>();
 
-            GameController.ReplayLevel();
+            FindObjectOfType<GameController>().ReplayLevel();
         }
 
         private void UpdateLevelNumber()

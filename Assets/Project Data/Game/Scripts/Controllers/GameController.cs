@@ -152,10 +152,21 @@ namespace Watermelon
             LoadLevel();
         }
 
-        public static void ReplayLevel()
+        public void ReplayLevel()
         {
+            foreach (GameObject obj in _femaleTileManager.allMaleCharacters)
+            {
+                if (obj == null) continue;
+                if (obj.transform.GetComponent<MaleBehavior>() == null) continue;
+                foreach (GameObject obj2 in obj.transform.GetComponent<MaleBehavior>().passengers) 
+                {
+                    if (obj2 == null) continue;
+                    Destroy(obj2);
+                }
+                obj.transform.GetComponent<MaleBehavior>().passengers.Clear();
+            }
             isGameActive = false;
-
+            
             UIController.ShowPage<UIMainMenu>();
 
             levelSave.ReplayingLevelAgain = true;

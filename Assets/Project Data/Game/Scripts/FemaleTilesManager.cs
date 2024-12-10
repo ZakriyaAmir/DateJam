@@ -52,11 +52,14 @@ namespace Watermelon.BusStop
             //
 
             //for spawners
+
             List<GameObject> tempSpawner = new List<GameObject>();
             List<SpawnerElementBehavior> tempSpawner2 = new List<SpawnerElementBehavior>();
             tempSpawner2 = FindObjectsOfType<SpawnerElementBehavior>().ToList();
+
             foreach (SpawnerElementBehavior obj in tempSpawner2)
             {
+                obj.extracted = false;
                 //Skip extracted spawner
                 if (!obj.extracted)
                 {
