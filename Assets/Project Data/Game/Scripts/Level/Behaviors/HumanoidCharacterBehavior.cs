@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Watermelon.BusStop
@@ -30,7 +31,15 @@ namespace Watermelon.BusStop
 
         private MaterialPropertyBlock propertyBlock;
 
+        public GameObject countCanvas;
+        public TMP_Text countText;
+
         public string color;
+
+        private void OnEnable()
+        {
+            if (countCanvas != null) { countCanvas.SetActive(false); }
+        }
 
         public override void Initialise(LevelElement levelElement, ElementPosition elementPosition)
         {
@@ -68,6 +77,7 @@ namespace Watermelon.BusStop
                 onCompleted?.Invoke();
             }));
         }
+
 
         public override void OnElementClicked(bool isClickAllowed)
         {
@@ -107,6 +117,7 @@ namespace Watermelon.BusStop
                 }
 
                 LevelController.SubmitElement(this, elementPosition);
+                countCanvas.SetActive(true);
             }
         }
 

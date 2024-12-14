@@ -12,8 +12,9 @@ namespace Watermelon.BusStop
 
         private TweenCase shakeTweenCase;
 
-        protected bool isMovementActive;
+        public bool isMovementActive;
         public bool IsMovementActive => isMovementActive;
+        public bool isVIP;
 
         private void Awake()
         {
@@ -27,13 +28,21 @@ namespace Watermelon.BusStop
         public void OnObjectClicked()
         {
             bool isClickAllowed = true;
-
-            if (!LevelController.SubmitIsAllowed()) isClickAllowed = false;
-            if (!isHighlighted) isClickAllowed = false;
-            if (isMovementActive) isClickAllowed = false;
+            if (!isVIP)
+            {
+                if (!isHighlighted) isClickAllowed = false;
+                if (isMovementActive) isClickAllowed = false;
+                if (!LevelController.SubmitIsAllowed()) isClickAllowed = false;
+            }
+            else 
+            {
+                //Just running these to coop with flow
+                if (!LevelController.SubmitIsAllowed()) { }
+            }
 
             if (isClickAllowed)
             {
+                isVIP = true;
                 LevelController.OnElementClicked(this, elementPosition);
 
                 AudioController.PlaySound(AudioController.Sounds.clickSound);

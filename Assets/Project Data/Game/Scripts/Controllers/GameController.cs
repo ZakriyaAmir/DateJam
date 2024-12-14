@@ -33,6 +33,7 @@ namespace Watermelon
         public FemaleTileManager _femaleTileManager;
 
         public static GameData Data => gameController.data;
+        public GameObject heartParticle;
 
         private void Awake()
         {
@@ -51,6 +52,7 @@ namespace Watermelon
 
         private void Start()
         {
+            Application.targetFrameRate = 120;
             InitialiseGame();
             _femaleTileManager = FindObjectOfType<FemaleTileManager>();
         }
@@ -154,10 +156,11 @@ namespace Watermelon
 
         public void ReplayLevel()
         {
-            foreach (GameObject obj in _femaleTileManager.allMaleCharacters)
+            GameObject malesParent = GameObject.Find("[POOL OBJECTS]");
+            foreach (Transform obj in malesParent.transform)
             {
                 if (obj == null) continue;
-                if (obj.transform.GetComponent<MaleBehavior>() == null) continue;
+                if (obj.GetComponent<MaleBehavior>() == null) continue;
                 foreach (GameObject obj2 in obj.transform.GetComponent<MaleBehavior>().passengers) 
                 {
                     if (obj2 == null) continue;

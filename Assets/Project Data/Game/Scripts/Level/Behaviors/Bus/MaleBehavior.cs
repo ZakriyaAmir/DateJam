@@ -25,6 +25,8 @@ namespace Watermelon
         public int PassengersCount => passengers.Count;
         public bool HasAvailableSit => passengers.Count < 3;
         public bool IsAvailableToEnter { get; private set; }
+        public GameObject countCanvas;
+        public TMP_Text countText;
 
         /*private void Awake()
         {
@@ -86,6 +88,8 @@ namespace Watermelon
             var sitIndex = passengers.Count - 1;
             _femaleTileManager.RemoveCharacter(passenger.GetComponent<femaleInfo>().Row, passenger.GetComponent<femaleInfo>().Column);
             StartCoroutine(MoveToDestination(passenger.transform, enterPosition.transform, sitIndex));
+            //update female count
+            countText.text = $"{PassengersCount}/{seats.Count}";
             /*passenger.GetComponent<BaseCharacterBehavior>().MoveTo(new Vector3[] { enterPosition.transform.position }, false, () =>
             {
                 var sit = seats[sitIndex];
@@ -152,7 +156,14 @@ namespace Watermelon
 
         public void MoveToExit()
         {
+            //Turn heads to exit position
+            foreach (var passenger in passengers) 
+            {
+                passenger.transform.LookAt(-LevelController.Environment.BusExitPos);
+            }
+            //transform.LookAt(LevelController.Environment.BusExitPos);
             LevelController.OnMatchComplete();
+            Instantiate(FindObjectOfType<GameController>().heartParticle,transform);
 
             //EnvironmentBehavior.RemoveCollectingBus();
 

@@ -14,7 +14,7 @@ namespace Watermelon.BusStop
 
         [SerializeField] AnimationCurve positionYCurve;
 
-        private static List<SlotBehavior> slots;
+        public static List<SlotBehavior> slots;
 
         private LevelController levelController;
         private Vector3 defaultContainerPosition;
@@ -22,7 +22,9 @@ namespace Watermelon.BusStop
         private BaseCharacterBehavior lastPickedObject;
 
         [SerializeField] public bool IsFilled => slots[^1].IsOccupied;
+        [SerializeField] public bool IsAlmostFilled => slots[5].IsOccupied;
         [SerializeField] public bool IsEmpty => !slots[0].IsOccupied;
+         public bool finalSubmitted;
 
         private TweenCase delayTweenCase;
 
@@ -104,6 +106,8 @@ namespace Watermelon.BusStop
 
         private void RemoveMatch(List<BaseCharacterBehavior> charactersToRemove)
         {
+            finalSubmitted = false;
+
             lastPickedObject = null;
 
             var slotsToRemove = new List<SlotCase>();
@@ -149,7 +153,7 @@ namespace Watermelon.BusStop
                     }
                 }
 
-                ShiftAllLeft();
+                Invoke(nameof(ShiftAllLeft),0.5f);
 
                 if (addedDepth > 0)
                 {
@@ -324,7 +328,7 @@ namespace Watermelon.BusStop
             if (removed)
             {
                 lastPickedObject = null;
-                ShiftAllLeft();
+                Invoke(nameof(ShiftAllLeft), 0.5f);
             }
         }
 
@@ -433,7 +437,7 @@ namespace Watermelon.BusStop
                     slot.SlotCase.Clear(false);
                     slot.RemoveSlot();
 
-                    instance.ShiftAllLeft();
+                    instance.Invoke(nameof(ShiftAllLeft), 0.5f);
 
                     break;
                 }
@@ -469,6 +473,7 @@ namespace Watermelon.BusStop
         }
         public void ShiftAllLeft()
         {
+            finalSubmitted = false;
             var lastIndex = -1;
 
             for (int i = 0; i < slots.Count - 1; i++)
@@ -555,7 +560,7 @@ namespace Watermelon.BusStop
                 if (slot.IsOccupied && (slot.SlotCase.IsMoving || slot.SlotCase.IsBeingRemoved)) return;
             }
 
-            ShiftAllLeft();
+            Invoke(nameof(ShiftAllLeft), 0.5f);
 
             for (int i = 0; i < addedDepth * 3; i++)
             {

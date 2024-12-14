@@ -93,10 +93,6 @@ namespace Watermelon.BusStop
                     obj.extracted = true;
                     AddUniqueGameObjectsFromSpawner(tempSpawner);
                     tempSpawner.Clear();
-                    foreach (GameObject go in tempSpawner)
-                    {
-                        Debug.Log("zak1 = " + go.name);
-                    }
                 }
             }
         }

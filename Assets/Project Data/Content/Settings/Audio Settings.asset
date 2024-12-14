@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Audio Settings
   m_EditorClassIdentifier: 
   music:
-    gameMusic: {fileID: 8300000, guid: e18713d5c19d4a84fa2c91618335bcd5, type: 3}
+    gameMusic: {fileID: 0}
   sounds:
     buttonSound: {fileID: 8300000, guid: 43778771ca132fe44baa768ab4be8bc2, type: 3}
     matchSound: {fileID: 8300000, guid: 1241c180ad574404590d97a6644a8811, type: 3}
@@ -21,7 +21,3 @@ MonoBehaviour:
     failSound: {fileID: 8300000, guid: a95a49e8527c2ab44a18abf1ab9bfdb7, type: 3}
     clickSound: {fileID: 8300000, guid: a5349628a6452e24d86c902694b9439d, type: 3}
     clickBlockedSound: {fileID: 8300000, guid: 18eaf8b95c233ba459aa90244ca504e9, type: 3}
-    powerupSound: {fileID: 8300000, guid: 1241c180ad574404590d97a6644a8811, type: 3}
-  vibrations:
-    shortVibration: 20
-    longVibration: 50

@@ -246,6 +246,17 @@ namespace Watermelon.BusStop
 
         public static bool SubmitIsAllowed()
         {
+            if (Dock.IsAlmostFilled)
+            {
+                if (!Dock.finalSubmitted)
+                {
+                    Dock.finalSubmitted = true;
+                }
+                else 
+                {
+                    return false;
+                }
+            }
             return !Dock.IsFilled;
         }
 
@@ -256,6 +267,10 @@ namespace Watermelon.BusStop
                 levelElements.Remove(blockElementBehavior);
 
                 Dock.SubmitToSlot(blockElementBehavior, instant);
+            }
+            if (Dock.finalSubmitted)
+            {
+                Dock.finalSubmitted = false;
             }
         }
 

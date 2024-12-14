@@ -738,6 +738,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: cc18c74156fc9524db7b52b045c19784, type: 2}
   uiController: {fileID: 8095943557840496073}
   _femaleTileManager: {fileID: 0}
+  heartParticle: {fileID: 172526, guid: 836a6e787e3b11941b38b8fff2af4e5b, type: 3}
 --- !u!114 &1060784200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,6 +1328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5178066047858781992}
     m_Modifications:
+    - target: {fileID: 1702972538369871097, guid: 8d03459103882dd4d97ac0242d87f2ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5409101143848345216, guid: 8d03459103882dd4d97ac0242d87f2ab, type: 3}
       propertyPath: m_Name
       value: UI Game Over
