@@ -1,0 +1,411 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d931e0e510c5941b73798608b73d81, type: 3}
+  m_Name: Level_038
+  m_EditorClassIdentifier: 
+  elementsData:
+  - elementType: 1
+    elementPosition:
+      x: 0
+      y: 0
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 0
+      y: 1
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 0
+      y: 2
+    specialEffectType: 0
+    temp: -1
+  - elementType: 13
+    elementPosition:
+      x: 0
+      y: 3
+    specialEffectType: 1
+    temp: 5
+  - elementType: 14
+    elementPosition:
+      x: 0
+      y: 4
+    specialEffectType: 1
+    temp: 6
+  - elementType: 1
+    elementPosition:
+      x: 0
+      y: 5
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 0
+      y: 6
+    specialEffectType: 0
+    temp: -1
+  - elementType: 11
+    elementPosition:
+      x: 0
+      y: 7
+    specialEffectType: 1
+    temp: 13
+  - elementType: 11
+    elementPosition:
+      x: 0
+      y: 8
+    specialEffectType: 1
+    temp: 14
+  - elementType: 0
+    elementPosition:
+      x: 1
+      y: 0
+    specialEffectType: 0
+    temp: 1
+  - elementType: 11
+    elementPosition:
+      x: 1
+      y: 1
+    specialEffectType: 0
+    temp: 2
+  - elementType: 16
+    elementPosition:
+      x: 1
+      y: 2
+    specialEffectType: 0
+    temp: 3
+  - elementType: 10
+    elementPosition:
+      x: 1
+      y: 3
+    specialEffectType: 0
+    temp: 4
+  - elementType: 13
+    elementPosition:
+      x: 1
+      y: 4
+    specialEffectType: 0
+    temp: 5
+  - elementType: 11
+    elementPosition:
+      x: 1
+      y: 5
+    specialEffectType: 0
+    temp: 6
+  - elementType: 1
+    elementPosition:
+      x: 1
+      y: 6
+    specialEffectType: 0
+    temp: -1
+  - elementType: 16
+    elementPosition:
+      x: 1
+      y: 7
+    specialEffectType: 0
+    temp: 12
+  - elementType: 15
+    elementPosition:
+      x: 1
+      y: 8
+    specialEffectType: 0
+    temp: 13
+  - elementType: 0
+    elementPosition:
+      x: 2
+      y: 0
+    specialEffectType: 0
+    temp: 1
+  - elementType: 16
+    elementPosition:
+      x: 2
+      y: 1
+    specialEffectType: 0
+    temp: 2
+  - elementType: 1
+    elementPosition:
+      x: 2
+      y: 2
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 2
+      y: 3
+    specialEffectType: 0
+    temp: -1
+  - elementType: 10
+    elementPosition:
+      x: 2
+      y: 4
+    specialEffectType: 0
+    temp: 6
+  - elementType: 13
+    elementPosition:
+      x: 2
+      y: 5
+    specialEffectType: 0
+    temp: 7
+  - elementType: 1
+    elementPosition:
+      x: 2
+      y: 6
+    specialEffectType: 0
+    temp: -1
+  - elementType: 11
+    elementPosition:
+      x: 2
+      y: 7
+    specialEffectType: 0
+    temp: 11
+  - elementType: 15
+    elementPosition:
+      x: 2
+      y: 8
+    specialEffectType: 0
+    temp: 12
+  - elementType: 1
+    elementPosition:
+      x: 3
+      y: 0
+    specialEffectType: 0
+    temp: -1
+  - elementType: 11
+    elementPosition:
+      x: 3
+      y: 1
+    specialEffectType: 0
+    temp: 3
+  - elementType: 100
+    elementPosition:
+      x: 3
+      y: 2
+    specialEffectType: 0
+    temp: 4
+  - elementType: 100
+    elementPosition:
+      x: 3
+      y: 3
+    specialEffectType: 0
+    temp: 8
+  - elementType: 11
+    elementPosition:
+      x: 3
+      y: 4
+    specialEffectType: 0
+    temp: 7
+  - elementType: 1
+    elementPosition:
+      x: 3
+      y: 5
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 3
+      y: 6
+    specialEffectType: 0
+    temp: -1
+  - elementType: 13
+    elementPosition:
+      x: 3
+      y: 7
+    specialEffectType: 0
+    temp: 10
+  - elementType: 15
+    elementPosition:
+      x: 3
+      y: 8
+    specialEffectType: 0
+    temp: 11
+  - elementType: 0
+    elementPosition:
+      x: 4
+      y: 0
+    specialEffectType: 0
+    temp: 1
+  - elementType: 13
+    elementPosition:
+      x: 4
+      y: 1
+    specialEffectType: 0
+    temp: 2
+  - elementType: 1
+    elementPosition:
+      x: 4
+      y: 2
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 4
+      y: 3
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 4
+      y: 4
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 4
+      y: 5
+    specialEffectType: 0
+    temp: -1
+  - elementType: 10
+    elementPosition:
+      x: 4
+      y: 6
+    specialEffectType: 1
+    temp: 8
+  - elementType: 16
+    elementPosition:
+      x: 4
+      y: 7
+    specialEffectType: 0
+    temp: 9
+  - elementType: 14
+    elementPosition:
+      x: 4
+      y: 8
+    specialEffectType: 1
+    temp: 10
+  - elementType: 0
+    elementPosition:
+      x: 5
+      y: 0
+    specialEffectType: 0
+    temp: 1
+  - elementType: 11
+    elementPosition:
+      x: 5
+      y: 1
+    specialEffectType: 0
+    temp: 2
+  - elementType: 15
+    elementPosition:
+      x: 5
+      y: 2
+    specialEffectType: 0
+    temp: 3
+  - elementType: 16
+    elementPosition:
+      x: 5
+      y: 3
+    specialEffectType: 0
+    temp: 4
+  - elementType: 16
+    elementPosition:
+      x: 5
+      y: 4
+    specialEffectType: 0
+    temp: 5
+  - elementType: 14
+    elementPosition:
+      x: 5
+      y: 5
+    specialEffectType: 0
+    temp: 6
+  - elementType: 13
+    elementPosition:
+      x: 5
+      y: 6
+    specialEffectType: 0
+    temp: 7
+  - elementType: 1
+    elementPosition:
+      x: 5
+      y: 7
+    specialEffectType: 0
+    temp: -1
+  - elementType: 16
+    elementPosition:
+      x: 5
+      y: 8
+    specialEffectType: 0
+    temp: 11
+  - elementType: 1
+    elementPosition:
+      x: 6
+      y: 0
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 6
+      y: 1
+    specialEffectType: 0
+    temp: -1
+  - elementType: 1
+    elementPosition:
+      x: 6
+      y: 2
+    specialEffectType: 0
+    temp: -1
+  - elementType: 16
+    elementPosition:
+      x: 6
+      y: 3
+    specialEffectType: 0
+    temp: 5
+  - elementType: 11
+    elementPosition:
+      x: 6
+      y: 4
+    specialEffectType: 0
+    temp: 6
+  - elementType: 16
+    elementPosition:
+      x: 6
+      y: 5
+    specialEffectType: 0
+    temp: 7
+  - elementType: 14
+    elementPosition:
+      x: 6
+      y: 6
+    specialEffectType: 1
+    temp: 8
+  - elementType: 13
+    elementPosition:
+      x: 6
+      y: 7
+    specialEffectType: 0
+    temp: 9
+  - elementType: 14
+    elementPosition:
+      x: 6
+      y: 8
+    specialEffectType: 1
+    temp: 10
+  spawnerData:
+  - elementPosition:
+      x: 3
+      y: 2
+    direction: 0
+    spawnQueue: 0e0000001000000010000000100000000a0000000a0000000f0000000f000000
+  - elementPosition:
+      x: 3
+      y: 3
+    direction: 2
+    spawnQueue: 0a0000000d0000000d000000
+  tutorialSteps: []
+  busSpawnQueue: 0b000000100000000d0000000f0000000a000000100000000e000000100000000b0000000a0000000d0000000e0000000d000000100000000f0000000b000000
+  width: 7
+  height: 9
+  coinsReward: 20
+  useInRandomizer: 1
+  note: 16  SPA x2  CRA x8
