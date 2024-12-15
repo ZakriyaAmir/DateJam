@@ -5475,6 +5475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterRenderer: {fileID: 3551672368987035978}
+  isMovementActive: 0
+  isVIP: 0
   graphicsAnimator: {fileID: 4820795213358106002}
   trailParticleSystem: {fileID: 1043693778023466453}
   movementSpeed: 10
@@ -5535,7 +5537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2048684781576133193
 Transform:
   m_ObjectHideFlags: 0
