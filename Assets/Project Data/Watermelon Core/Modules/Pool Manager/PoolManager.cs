@@ -16,7 +16,7 @@ namespace Watermelon
         /// <summary>
         /// List of all existing pools.
         /// </summary>
-        [SerializeField] List<Pool> poolsList = new List<Pool>();
+        [SerializeField] public List<Pool> poolsList = new List<Pool>();
 
         /// <summary>
         /// Dictionary which allows to acces Pool by name.
@@ -30,8 +30,9 @@ namespace Watermelon
         /// </summary>
         public static int SpawnedObjectsAmount => instance.spawnedObjectAmount;
 
-        private static Transform objectsContainer;
+        public static Transform objectsContainer;
         public static Transform ObjectsContainerTransform => objectsContainer;
+        public Transform _ObjectsContainerTransform => ObjectsContainerTransform;
 
         private void Awake()
         {

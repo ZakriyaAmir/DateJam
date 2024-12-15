@@ -15,6 +15,7 @@ namespace Watermelon
 
         [DrawReference]
         [SerializeField] GameData data;
+        [SerializeField] public List<GameObject> allMales;
 
         [SerializeField] UIController uiController;
 
@@ -156,18 +157,19 @@ namespace Watermelon
 
         public void ReplayLevel()
         {
-            GameObject malesParent = GameObject.Find("[POOL OBJECTS]");
-            foreach (Transform obj in malesParent.transform)
+            foreach (GameObject obj in allMales)
             {
                 if (obj == null) continue;
                 if (obj.GetComponent<MaleBehavior>() == null) continue;
                 foreach (GameObject obj2 in obj.transform.GetComponent<MaleBehavior>().passengers) 
                 {
+                    Debug.Log("zak4 = " + obj2.name);
                     if (obj2 == null) continue;
                     Destroy(obj2);
                 }
                 obj.transform.GetComponent<MaleBehavior>().passengers.Clear();
             }
+            allMales.Clear();
             isGameActive = false;
             
             UIController.ShowPage<UIMainMenu>();

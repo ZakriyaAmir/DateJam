@@ -80,6 +80,11 @@ namespace Watermelon
             Move(LevelController.Environment.BusCollectPos, duration, MakeAvailable);
         }*/
 
+        private void OnEnable()
+        {
+            FindObjectOfType<GameController>().allMales.Add(gameObject);
+        }
+
         public void Collect(GameObject passenger)
         {
             //Remove female from femaletilemanager by giving its row and column reference but first we have to assign each female an up to date row and column ID also remove return from this function
