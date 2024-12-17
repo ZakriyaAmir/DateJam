@@ -276,6 +276,8 @@ namespace Watermelon.BusStop
                 var slot = slots[i];
                 if (slot.SlotCase == null) continue;
                 if (_gameController._femaleTileManager.isBusy) continue;
+                if (slot.SlotCase.Behavior == null) continue;
+                if (slot.SlotCase.Behavior.gameObject == null) continue;
                 var male = slot.SlotCase.Behavior.gameObject.GetComponent<MaleBehavior>();
                 if (slot.IsOccupied)
                 {
@@ -313,7 +315,7 @@ namespace Watermelon.BusStop
 
                             if (male.PassengersCount > 2)
                             {
-                                slot.RemoveSlot();
+                                slot.Invoke(nameof(slot.RemoveSlot),0.3f);
                                 removed = true;
                                 male.MoveToExit();
                             }

@@ -28,12 +28,12 @@ namespace Watermelon.BusStop
         public void OnObjectClicked()
         {
             bool isClickAllowed = true;
-            if (!isVIP)
-            {
+            /*if (!isVIP)
+            {*/
                 if (!isHighlighted) isClickAllowed = false;
                 if (isMovementActive) isClickAllowed = false;
                 if (!LevelController.SubmitIsAllowed()) isClickAllowed = false;
-            }
+            //}
             else 
             {
                 //Just running these to coop with flow
@@ -42,7 +42,7 @@ namespace Watermelon.BusStop
 
             if (isClickAllowed)
             {
-                isVIP = true;
+                //isVIP = true;
                 LevelController.OnElementClicked(this, elementPosition);
 
                 AudioController.PlaySound(AudioController.Sounds.clickSound);
