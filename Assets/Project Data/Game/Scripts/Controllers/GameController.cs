@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Watermelon.BusStop;
 using Watermelon.SkinStore;
+using System;
 
 namespace Watermelon
 {
@@ -35,13 +36,14 @@ namespace Watermelon
 
         public static GameData Data => gameController.data;
         public GameObject heartParticle;
+        public static Action clearMales;
 
         private void Awake()
         {
             gameController = this;
             SaveController.Initialise(useAutoSave: false);
             levelSave = SaveController.GetSaveObject<LevelSave>("level");
-
+            clearMales += flushAllMales;
             // Cache components
             CacheComponent(out particlesController);
             CacheComponent(out currenciesController);
@@ -49,6 +51,17 @@ namespace Watermelon
             CacheComponent(out tutorialController);
             CacheComponent(out powerUpsController);
             
+        }
+
+        void flushAllMales() 
+        {
+            foreach (var m in allMales) 
+            {
+                if (m == null) continue;
+                m.GetComponent<BaseCharacterBehavior>().isDocked = false;
+                m.GetComponent<BaseCharacterBehavior>().isVIP = false;
+            }
+            allMales.Clear();
         }
 
         private void Start()
@@ -142,6 +155,7 @@ namespace Watermelon
 
         public static void LoadNextLevel()
         {
+            clearMales?.Invoke();
             if (isGameActive)
                 return;
 
@@ -169,7 +183,7 @@ namespace Watermelon
                 }
                 obj.transform.GetComponent<MaleBehavior>().passengers.Clear();
             }
-            allMales.Clear();
+            clearMales?.Invoke();
             isGameActive = false;
             
             UIController.ShowPage<UIMainMenu>();

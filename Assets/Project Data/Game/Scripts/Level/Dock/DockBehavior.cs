@@ -14,7 +14,7 @@ namespace Watermelon.BusStop
 
         [SerializeField] AnimationCurve positionYCurve;
 
-        public static List<SlotBehavior> slots;
+        [SerializeField] public static List<SlotBehavior> slots;
 
         private LevelController levelController;
         private Vector3 defaultContainerPosition;
@@ -22,7 +22,7 @@ namespace Watermelon.BusStop
         private BaseCharacterBehavior lastPickedObject;
 
         [SerializeField] public bool IsFilled => slots[^1].IsOccupied;
-        [SerializeField] public bool IsAlmostFilled => slots[5].IsOccupied;
+        //[SerializeField] public bool IsAlmostFilled => slots[5].IsOccupied;
         [SerializeField] public bool IsEmpty => !slots[0].IsOccupied;
          public bool finalSubmitted;
 

@@ -124,15 +124,18 @@ namespace Watermelon
             }
 
             objectToMove.position = targetPosition.position; // Snap to the target position at the end
-            var sit = seats[sitIndex];
-            objectToMove.transform.SetParent(sit);
-            objectToMove.transform.position = sit.position;
-            objectToMove.transform.localRotation = Quaternion.Euler(0, 90, 0);
-            //objectToMove.GetComponent<BaseCharacterBehavior>().PlaySpawnAnimation();
-            //objectToMove.GetComponent<BaseCharacterBehavior>().OnElementSubmittedToBus();
+            if (sitIndex < seats.Count)
+            {
+                var sit = seats[sitIndex];
+                objectToMove.transform.SetParent(sit);
+                objectToMove.transform.position = sit.position;
+                objectToMove.transform.localRotation = Quaternion.Euler(0, 90, 0);
+                //objectToMove.GetComponent<BaseCharacterBehavior>().PlaySpawnAnimation();
+                //objectToMove.GetComponent<BaseCharacterBehavior>().OnElementSubmittedToBus();
 
-            if (!HasAvailableSit)
-                IsAvailableToEnter = false;
+                if (!HasAvailableSit)
+                    IsAvailableToEnter = false;
+            }
         }
 
         public void CollectInstant(BaseCharacterBehavior passenger)

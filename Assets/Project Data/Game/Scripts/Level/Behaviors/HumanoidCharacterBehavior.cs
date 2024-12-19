@@ -59,6 +59,7 @@ namespace Watermelon.BusStop
 
         public override void MoveTo(Vector3[] path, bool isSlots, SimpleCallback onCompleted)
         {
+            if (graphicsAnimator == null) return;
             graphicsAnimator.SetBool(ANIMATOR_SLOTS_BOOL, isSlots);
             graphicsAnimator.SetBool(ANIMATOR_MOVEMENT_BOOL, true);
 

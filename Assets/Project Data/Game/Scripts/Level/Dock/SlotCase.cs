@@ -82,8 +82,12 @@ namespace Watermelon
         {
             if (elementMoveCases != null && !elementMoveCases.IsComplete()) elementMoveCases.Kill();
 
-            if(disableBlock)
+            if (disableBlock) 
+            {
+                if (Behavior == null) return;
+                if (Behavior.gameObject == null) return;
                 Behavior.gameObject.SetActive(false);
+            }
         }
     }
 }
