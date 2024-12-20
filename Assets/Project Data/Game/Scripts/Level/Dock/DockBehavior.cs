@@ -366,7 +366,7 @@ namespace Watermelon.BusStop
                 var block = slot.SlotCase.Behavior.LevelElement;
                 if (matchableObject.LevelElement == block)
                 {
-                    for (int j = i + 1; j < slots.Count; j++)
+                    /*for (int j = i + 1; j < slots.Count; j++)
                     {
                         var nextSlot = slots[j];
 
@@ -377,7 +377,7 @@ namespace Watermelon.BusStop
                         {
                             return j;
                         }
-                    }
+                    }*/
                 }
             }
 
@@ -414,14 +414,17 @@ namespace Watermelon.BusStop
             slotCase.IsMoving = true;
             slotCase.MoveType = MoveType.Submit;
 
-            if (slots[index].IsOccupied)
+            slots[index].Assign(slotCase, instant);
+            /*if (slots[index].IsOccupied)
             {
+                Debug.Log("zak1");
                 Insert(slotCase, index, instant);
             }
             else
             {
+                Debug.Log("zak2");
                 slots[index].Assign(slotCase, instant);
-            }
+            }*/
 
             lastPickedObject = element;
 
