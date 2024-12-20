@@ -257,7 +257,16 @@ namespace Watermelon.BusStop
                     return false;
                 }
             }*/
-            return !Dock.IsFilled;
+            bool filled = true;
+            foreach (SlotBehavior slot in Dock.slots2) 
+            {
+                if (!slot.IsOccupied) 
+                {
+                    filled = false;
+                } 
+            }
+            //return !Dock.IsFilled;
+            return !filled;
         }
 
         public static void OnElementSubmittedToSlot(BaseCharacterBehavior blockElementBehavior, bool instant)
@@ -288,7 +297,6 @@ namespace Watermelon.BusStop
             }
 
             OnMapChanged();
-
             levelTutorial.OnElementSubmitted(levelElementBehavior, elementPosition);
         }
 

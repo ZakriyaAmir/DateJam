@@ -13,10 +13,8 @@ namespace Watermelon
         public Vector3 Position { get; private set; }
         public Vector3 Scale { get; private set; }
         public Vector3 Rotation { get; private set; }
-        [SerializeField]
-        public SlotCase SlotCase { get; private set; }
-
-        public bool IsOccupied => SlotCase != null;
+        [SerializeField] public SlotCase SlotCase;
+        [SerializeField] public bool IsOccupied => SlotCase != null;
 
         private TweenCase colorCase;
 
@@ -28,6 +26,11 @@ namespace Watermelon
 
             return tempSlot;
         }
+
+        /*private void Update()
+        {
+            Debug.Log($"slot {gameObject.name} | {SlotCase} | {IsOccupied}");
+        }*/
 
         public void Init()
         {

@@ -15,13 +15,15 @@ namespace Watermelon.BusStop
         [SerializeField] AnimationCurve positionYCurve;
 
         [SerializeField] public static List<SlotBehavior> slots;
+        [SerializeField] public List<SlotBehavior> slots2 => slots;
 
         private LevelController levelController;
         private Vector3 defaultContainerPosition;
 
         private BaseCharacterBehavior lastPickedObject;
 
-        [SerializeField] public bool IsFilled => slots[^1].IsOccupied;
+        //[SerializeField] public bool IsFilled => slots[^1].IsOccupied;
+        [SerializeField] public bool IsFilled;
         //[SerializeField] public bool IsAlmostFilled => slots[5].IsOccupied;
         [SerializeField] public bool IsEmpty => !slots[0].IsOccupied;
          public bool finalSubmitted;
@@ -153,7 +155,7 @@ namespace Watermelon.BusStop
                     }
                 }
 
-                Invoke(nameof(ShiftAllLeft),0.5f);
+                ShiftAllLeft();
 
                 if (addedDepth > 0)
                 {
@@ -269,11 +271,31 @@ namespace Watermelon.BusStop
             //var bus = EnvironmentBehavior.CollectingBus;
             //if (bus == null) return;
             //if (!bus.IsAvailableToEnter || !bus.HasAvailableSit) return;
+            
+            //for is filled bool
+            bool filledAlt = true;
+            foreach (var slot in slots)
+            {
+                if (!slot.IsOccupied)
+                {
+                    filledAlt = false;
+                    break;
+                }
+            }
+            IsFilled = filledAlt;
+            //
 
             bool removed = false;
             for (int i = 0; i < slots.Count; i++)
             {
                 var slot = slots[i];
+
+                //Debug.Log($"slot {slot} | {slot.IsOccupied}");
+                if (!slot.IsOccupied)
+                {
+                    matchFailCount = 0;
+                }
+
                 if (slot.SlotCase == null) continue;
                 if (_gameController._femaleTileManager.isBusy) continue;
                 if (slot.SlotCase.Behavior == null) continue;
@@ -284,7 +306,7 @@ namespace Watermelon.BusStop
                     if (IsFilled)
                     {
                         matchFailCount++;
-                        if (matchFailCount > 1000)
+                        if (matchFailCount > 2000)
                         {
                             gameOver = true;
                             levelController.OnSlotsFilled();
@@ -330,7 +352,7 @@ namespace Watermelon.BusStop
             if (removed)
             {
                 lastPickedObject = null;
-                Invoke(nameof(ShiftAllLeft), 0.5f);
+                ShiftAllLeft();
             }
         }
 
@@ -439,7 +461,7 @@ namespace Watermelon.BusStop
                     slot.SlotCase.Clear(false);
                     slot.RemoveSlot();
 
-                    instance.Invoke(nameof(ShiftAllLeft), 0.5f);
+                    instance.ShiftAllLeft();
 
                     break;
                 }
@@ -482,6 +504,12 @@ namespace Watermelon.BusStop
             {
                 var recepient = slots[i];
 
+                if (recepient.IsOccupied) 
+                {
+                    //Debug.Log($"zak = {slots[i]} = {slots[i].IsOccupied}");
+                }
+                /*var recepient = slots[i];
+
                 if (recepient.IsOccupied) continue;
 
                 bool found = false;
@@ -507,7 +535,7 @@ namespace Watermelon.BusStop
                 }
 
                 lastIndex = i;
-                if (!found) break;
+                if (!found) break;*/
             }
 
             if (lastIndex == -1) return;
@@ -562,7 +590,7 @@ namespace Watermelon.BusStop
                 if (slot.IsOccupied && (slot.SlotCase.IsMoving || slot.SlotCase.IsBeingRemoved)) return;
             }
 
-            Invoke(nameof(ShiftAllLeft), 0.5f);
+            ShiftAllLeft();
 
             for (int i = 0; i < addedDepth * 3; i++)
             {

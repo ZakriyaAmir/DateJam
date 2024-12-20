@@ -177,7 +177,7 @@ namespace Watermelon
                 if (obj.GetComponent<MaleBehavior>() == null) continue;
                 foreach (GameObject obj2 in obj.transform.GetComponent<MaleBehavior>().passengers) 
                 {
-                    Debug.Log("zak4 = " + obj2.name);
+                    //Debug.Log("zak4 = " + obj2.name);
                     if (obj2 == null) continue;
                     Destroy(obj2);
                 }
